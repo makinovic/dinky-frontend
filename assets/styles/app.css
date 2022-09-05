@@ -1,0 +1,8 @@
+@import "../../node_modules/filepond/dist/filepond.min.css";
+
+.filepond--item-panel{
+        background-color: #FFC107;
+}
+.filepond--file{
+        color: #000;
+}
