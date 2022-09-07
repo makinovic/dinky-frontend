@@ -2,37 +2,45 @@
 
 <div class="container mt-5">
     <b-row>
-        <b-col class="px-2" lg="4" offset-lg="4" md="6" offset-md="3" offset-sm="1">
+        <b-col class="px-2" lg="8" offset-lg="2" md="6" offset-md="3" offset-sm="1">
         <h3>Inciciar sesión</h3></hr>
 
-        <b-form @submit.prevent="login">
-            <b-form-group label="Correo" label-for="email">
-              <b-form-input 
-                v-model="form.email"
-                id="email"
-                type="email"
-                placeholder="e.g. test@test.com"
-                :state="!errors.email && null"                
-                >                
-              </b-form-input>
-              
-              <b-form-invalid-feedback v-if="errors.email">{{errors.email[0]}}</b-form-invalid-feedback>
-            </b-form-group>
 
-            <b-form-group label="Contraseña" label-for="password">
-                <b-form-input 
-                v-model="form.password"
-                 id="password"
-                 type="password"
-                 :state="!errors.password && null" 
-                
-                 >
-                </b-form-input>  
+         <v-app>
+          <form @submit.prevent="login">
+                <v-text-field                 
+                  v-model="form.email"
+                  :state="!errors.email && null" 
+                  :counter="10"
+                  id="email"
+                  label="Correo"
+                  required                 
+                >
+                <v-icon slot="append" color="info">
+                mdi-mailbox
+                </v-icon>                
+                </v-text-field> 
+                <b-form-invalid-feedback v-if="errors.email">{{errors.email[0]}}</b-form-invalid-feedback>             
+                 <v-text-field
+                  v-model="form.password"
+                  :state="!errors.password && null" 
+                  :counter="10"
+                  type='password'
+                  id="password"
+                  label="Contraseña"
+                  required                 
+                >
+                <v-icon slot="append" color="info">
+                mdi-key
+                </v-icon>
+                </v-text-field>
                 <b-form-invalid-feedback v-if="errors.password">{{errors.password[0]}}</b-form-invalid-feedback>
-              </b-form-group>
-              <b-button type="submit" variant="primary">Inciciar sesión</b-button>
-            </b-form>
+                <v-btn color="info" class="mr-4" type="submit">enviar</v-btn>
+                <v-btn color="warning" @click.prevent="clear">borrar</v-btn>
+         </form>  
+         </v-app>
 
+      
         </b-col>
     </b-row>
 

@@ -8,13 +8,19 @@
   <v-app>
           <form @submit.prevent="register">
                 <v-text-field
+                 
                   v-model="form.email"
                   :state="!errors.email && null" 
                   :counter="10"
                   id="email"
                   label="Correo"
                   required                 
-                ></v-text-field>
+                >
+                <v-icon slot="append" color="info">
+                mdi-mailbox
+                </v-icon>
+                
+                </v-text-field>
                 <v-text-field
                   v-model="form.name"
                   :state="!errors.name && null" 
@@ -22,7 +28,11 @@
                   id="name"
                   label="Nombre"
                   required                  
-                ></v-text-field> 
+                >
+                <v-icon slot="append" color="info">
+                mdi-account
+                </v-icon>
+                </v-text-field> 
                  <v-text-field
                   v-model="form.password"
                   :state="!errors.password && null" 
@@ -31,7 +41,11 @@
                   id="password"
                   label="Contraseña"
                   required                 
-                ></v-text-field>
+                >
+                <v-icon slot="append" color="info">
+                mdi-key
+                </v-icon>
+                </v-text-field>
                 <v-btn color="info" class="mr-4" type="submit">enviar</v-btn>
                 <v-btn color="warning" @click.prevent="clear">borrar</v-btn>
          </form>  

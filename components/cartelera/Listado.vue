@@ -7,7 +7,7 @@
  <v-app>
      <v-container fluid>
         <v-row >
-            <v-col   v-for="resultados in datos.results" :key="resultados.id" cols="12" sm="6" md="4" >
+            <v-col   v-for="resultados in datos.results" :key="resultados.id" cols="12" sm="6" md="3" >
                     <v-card  class="mx-auto"  max-width="344" >
                      <NuxtLink :to="getDetUrl(resultados.id) ">
                         <v-img
