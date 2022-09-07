@@ -2,21 +2,35 @@
 
 <b-row>
  
-<div class=" col-md-3 mt-4 mb-4  d-flex align-items-stretch"  v-for="resultados in datos.results" :key="resultados.id">
+
  
- <b-card no-body class="rounded-4">
-     <NuxtLink :to="getDetUrl(resultados.id) ">
-         <img class="card-img-top " :src="getImgUrl(resultados.poster_path)" alt="Card image cap">
-     </NuxtLink>
-            <div class="card-body">
-                <h5 class="card-title">{{resultados.title}}</h5>
-                <p class="card-text"> {{formatDate(resultados.release_date)}}
-                       valoración: {{resultados.vote_average}}</p>
-               
-            </div>
-  </b-card>
+ <v-app>
+     <v-container fluid>
+        <v-row >
+            <v-col   v-for="resultados in datos.results" :key="resultados.id" cols="12" sm="6" md="4" >
+                    <v-card  class="mx-auto"  max-width="344" >
+                     <NuxtLink :to="getDetUrl(resultados.id) ">
+                        <v-img
+                            :src="getImgUrl(resultados.poster_path)"
+                            height="200px"
+                        ></v-img> 
+                     </NuxtLink>           
+                        <v-card-title class="text-no-wrap text-truncate">
+                            {{resultados.title}}
+                        </v-card-title>            
+                        <v-card-subtitle>
+                            <p class="card-text"> {{formatDate(resultados.release_date)}}
+                            valoración: {{resultados.vote_average}}</p>
+                        </v-card-subtitle>
+                    </v-card>
+            </v-col>
+        </v-row>
+     </v-container>
+ </v-app>
+
+
  
-  </div>
+ 
     
 </b-row>
 </template>

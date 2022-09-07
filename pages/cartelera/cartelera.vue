@@ -6,7 +6,8 @@
         <b-row>             
         
         <b-col class="px-2 mt-4" cols="12" >  
-          <h3>ACTUALMENTE EN CINES</h3>           
+          <h3>ACTUALMENTE EN CINES</h3>  
+          <p>Usando Vuetify</p>         
              <listado/>
         </b-col>    
         </b-row>   

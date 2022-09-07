@@ -17,6 +17,8 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@stripe/stripe-js": "^1.35.0",
+    "@vuelidate/core": "^2.0.0-alpha.44",
+    "@vuelidate/validators": "^2.0.0-alpha.31",
     "bootstrap-vue": "^2.22.0",
     "buttercms": "^1.2.9",
     "chart.js": "^3.8.2",
@@ -27,10 +29,15 @@
     "nuxt": "^2.15.8",
     "nuxt-gmaps": "^1.2.10",
     "stripe": "^10.0.0",
+    "validator": "^13.7.0",
     "vue": "^2.6.14",
     "vue-chartjs": "^4.1.1",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "webpack": "^4.46.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.3.2",
+    "@nuxtjs/vuetify": "^1.12.3"
   }
 }

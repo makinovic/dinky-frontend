@@ -6,6 +6,12 @@
    
   <h6>Datos reales obtenidos de <strong>Red Eléctrica de España</strong> (www.ree.es/es)  </h6>
   
+          <template v-if="loadingForm">
+            <div class="d-flex justify-content-center mb-3 mt-4">
+                <b-spinner variant="primary" style="width: 4rem;height:4rem;"></b-spinner>
+            </div>
+        </template>
+        <template v-else>
 
     
 					
@@ -63,10 +69,11 @@
 										</div>
 									</div>
 								</div>
- 
+             	<h2 class="title mt-4" itemprop="name">PRECIO DEL KWH DE LUZ POR HORAS</h2>
+        </template>
 
-                <div class="col-lg-12 ">
-					<h2 class="title mt-4" itemprop="name">PRECIO DEL KWH DE LUZ POR HORAS</h2>
+        <div class="col-lg-12 ">
+				
 					<div id="hour_prices" class="col-display-4">
             <div   v-for="dato in this.datos" :key="dato.id">
 													<div class="col-xs-3 barra" :style="{'background-color':dato.color} "></div>
@@ -107,7 +114,8 @@ export default {
       horaActual:[],
       rangoFechaMax:'',
       rangoFechaMin:'',
-      colorVal:''
+      colorVal:'',
+      loadingForm:true,
     }
     
     },
@@ -176,6 +184,7 @@ export default {
                 console.log(error)
                 
             } 
+            this.loadingForm=false;
         },
 
         pad(d) {

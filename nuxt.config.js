@@ -1,4 +1,14 @@
 export default {
+
+   // Defaults options
+   tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {},
+    injectPosition: 0,
+    viewer: true,
+  },
   
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -30,7 +40,8 @@ plugins: [],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    '@nuxtjs/vuetify',
   ],
   fontawesome:{
     icons:{

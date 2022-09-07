@@ -8,6 +8,7 @@
         </template>
         <template  v-else>
             <h3>PRÓXIMOS CONCIERTOS</h3> 
+             <p>Usando Vue Boostrap</p> 
 
             
            <div class=" content-row">
